@@ -26,34 +26,30 @@
 
     <div class="header-hero">
       <div class="logo-container">
+        <!-- Image MUST be floated first in the DOM structure so text wraps correctly -->
         <img src="/images/CatBoarding.png" alt="Cat Concierge Logo Icon" class="logo-img" />
-        <h1>Cat Concierge<sup class="reg-mark">®</sup></h1>
+        <h1>Cat Concierge<span class="reg-mark">®</span></h1>
         <h3>Let your cats relax while you're away</h3>
       </div>
     </div>
 
-    <!-- 3 Column Layout using Flexbox instead of Tables -->
+    <!-- Center-aligned 3 Column Grid -->
     <div class="home-columns">
-      <!-- Left Column -->
-      <div class="home-col">
-        <div class="content-box">
-          <div class="social-icons-inline">
-            <span class="font-light text-black">Visit Cat Concierge on Facebook!</span>
-            <a href="https://www.facebook.com/CatConciergeCatSitting/" title="Cat Concierge on Facebook">
+      <div class="home-col-left">
+        <div class="content-box home-side-box">
+          <div class="fb-flex">
+            <p class="font-light text-black" style="font-size: 14px; text-align: left;">Visit Cat Concierge on Facebook!</p>
+            <a href="https://www.facebook.com/CatConciergeCatSitting/" title="Cat Concierge on Facebook" style="flex-shrink: 0;">
               <img src="/images/fbook2019.png" alt="Cat Concierge Facebook" width="30" />
             </a>
           </div>
         </div>
-        <div class="content-box text-center">
-          <p>
-            Contact us on <span class="text-lg font-bold text-red">8006-6171</span>
-            or Email:<br>
-            <img src="/images/service-address.png" alt="Cat Concierge Cat Sitting Enquiries Email" width="200" style="margin: 5px 0 0 0;" />
-          </p>
+        <div class="content-box home-side-box text-center">
+          <p style="color: #585858;">Contact us on <span class="font-bold text-red" style="font-size: 16px;">8006-6171</span> or Email:</p>
+          <img src="/images/service-address.png" alt="Cat Concierge Cat Sitting Enquiries Email" width="200" style="margin-top: 10px;" />
         </div>
       </div>
 
-      <!-- Center Column: Slideshow -->
       <div class="slideshow-container">
         <div id="slides" class="slides">
           <img src="/images/slideshow/1.png" alt="Slideshow Image 1" style="opacity: 1" />
@@ -68,10 +64,9 @@
         </div>
       </div>
 
-      <!-- Right Column -->
-      <div class="home-col">
-        <div class="content-box">
-          <p class="font-bold text-red">Sydney suburbs currently serviced by Cat Concierge cat sitting include:</p>
+      <div class="home-col-right">
+        <div class="content-box home-side-box">
+          <p class="font-bold text-red" style="margin-bottom: 15px;">Sydney suburbs currently serviced by Cat Concierge cat sitting include:</p>
           <p>Lane Cove, Hunters Hill, Riverview, Gladesville, Linley Point, Drummoyne, Longueville, Artarmon, Northwood, Greenwich, Chatswood West, Chatswood, Woolwich, Boronia Park, Huntleys Cove, Huntleys Point, Henley, Chiswick, Putney, Tennyson Point.</p>
         </div>
       </div>
@@ -99,7 +94,7 @@
         <span class="text-red">for your free initial consultation.</span>
       </p>
 
-      <p class="text-center text-3xl font-medium text-red mt-20">Cat Concierge will tend to all of your feline friend's needs!</p>
+      <p class="text-center text-3xl font-medium text-red" style="margin-top: 40px;">Cat Concierge will tend to all of your feline friend's needs!</p>
 
       <div class="social-footer-links">
         <span class="text-4xl font-medium text-blue-light"><sup class="reg-mark" style="font-size: 0.5em;">Find us on</sup></span>
@@ -111,7 +106,7 @@
   </main>
 
   <footer class="container">
-    <p class="text-center">© Copyright 2025 Cat Concierge<sup class="reg-mark">®</sup></p>
+    <p class="text-center">© Copyright 2025 Cat Concierge<span class="reg-mark">®</span></p>
     <p class="text-center"><a href="/terms-and-conditions.pdf" title="Cat Concierge Terms and Conditions of service">Cat Concierge Terms and Conditions</a></p>
   </footer>
 

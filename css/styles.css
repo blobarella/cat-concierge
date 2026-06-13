@@ -21,9 +21,7 @@
 /* ==========================================================================
    Base & Reset
    ========================================================================== */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: var(--font-fallback);
@@ -35,20 +33,9 @@ body {
   color: var(--color-primary-text);
 }
 
-a {
-  color: #42413C;
-  text-decoration: none;
-}
-
-a:hover, a:active, a:focus {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border: none;
-}
+a { color: #42413C; text-decoration: none; }
+a:hover, a:active, a:focus { text-decoration: none; }
+img { max-width: 100%; height: auto; border: none; }
 
 /* ==========================================================================
    Typography & Utility Classes
@@ -62,15 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-h1 {
-  font-family: var(--font-logo);
-  font-size: 51px;
-  margin: 0;
-  padding-left: 50px;
-}
-
 h2 { font-size: 24px; }
-h3 { font-size: 22px; margin-top: -40px; }
 h4 { font-family: var(--font-body); font-size: 16px; font-weight: 400; }
 
 p, ul, ol, blockquote {
@@ -99,17 +78,13 @@ ul { font-size: 15px; }
 .text-2xl { font-size: 20px; }
 .text-3xl { font-size: 24px; }
 .text-4xl { font-size: 30px; }
-.reg-mark { font-size: 0.4em; vertical-align: super; }
+.reg-mark { font-size: 17px; vertical-align: super; }
 
 /* ==========================================================================
    Layout Containers
    ========================================================================== */
-.container {
-  width: var(--site-width);
-  margin: 0 auto;
-}
+.container { width: var(--site-width); margin: 0 auto; }
 
-/* Shared Box Style (Replaces old #boxmain, #feeboxmain, etc.) */
 .content-box {
   background: #fff url('/images/gradientbox.png') 0 0 repeat-x;
   border: 1px solid #000;
@@ -126,254 +101,175 @@ ul { font-size: 15px; }
 /* ==========================================================================
    Header & Navigation
    ========================================================================== */
-.main-nav {
-  background-color: var(--color-nav-bg);
-  height: auto;
-}
+.main-nav { text-align: center; background: transparent; height: auto; margin-top: 0; }
 
 .nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-list li {
-  margin: 0;
+  list-style: none; padding: 0; margin: 0;
+  display: inline-flex;
+  background-color: var(--color-nav-bg);
 }
 
 .nav-list a {
-  display: block;
-  width: 110px;
-  padding: 10px 20px;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 300;
-  color: #42413C;
-  text-align: center;
-  transition: background-color 0.2s, color 0.2s;
+  display: block; width: 150px; padding: 10px 0;
+  font-family: var(--font-body); font-size: 14px; font-weight: 300;
+  color: #42413C; text-align: center; transition: background-color 0.2s, color 0.2s;
 }
 
-.nav-list a:hover,
-.nav-list a.selected {
-  background-color: var(--color-nav-hover);
-  color: #ffffff;
-}
+.nav-list a:hover, .nav-list a.selected { background-color: var(--color-nav-hover); color: #ffffff; }
 
-.header-hero {
-  width: 900px;
-  margin: 20px auto;
-  text-align: center;
+/* ==========================================================================
+   Header & Logo Layout
+   ========================================================================== */
+.header-hero { 
+  width: 900px; 
+  margin: 20px auto; 
 }
 
 .logo-container {
-  display: inline-block;
-  text-align: center;
-  position: relative;
   width: 510px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.logo-img {
-  float: right;
-  width: 62px;
-  margin: 0;
+/* Clearfix to ensure container wraps the floated cat */
+.logo-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo-img { 
+  float: right; 
+  width: 62px; 
+  margin: 0; 
+}
+
+.logo-container h1 { 
+  font-family: var(--font-logo); 
+  font-size: 51px; 
+  font-weight: 400; 
+  margin: 0; 
+  padding: 0 20px 0 50px; 
+  line-height: 1.1; /* Tightens the spacing naturally */
+}
+
+.logo-container h3 { 
+  font-size: 22px; 
+  font-weight: 300;
+  margin: 5px 0 15px 0; /* Natural spacing, no negative hacks */
+  padding: 0 20px;
 }
 
 /* ==========================================================================
    Homepage Specific Layout
    ========================================================================== */
 .home-columns {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 355px 1fr;
+  align-items: center; 
+  gap: 0;
   margin-bottom: 20px;
 }
 
-.home-col {
-  flex: 1;
-}
-
-/* Specific floating box padding adjustment */
-.home-col .content-box {
-  padding: 15px;
-  margin-top: 0;
-}
-
-.social-icons-inline {
+.home-col-left, .home-col-right {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-side-box { margin: 0 20px; padding: 15px; }
+.home-side-box p { margin: 0; padding: 0; }
+
+.fb-flex {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 15px;
 }
 
 /* Slideshow Container */
-.slideshow-container {
-  width: 355px;
-  height: 266px;
-  border: 2px solid #fff;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.slides {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.slides img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  margin: 0;
-}
+.slideshow-container { width: 355px; height: 266px; border: 2px solid #fff; position: relative; margin: 0 auto; }
+.slides { width: 100%; height: 100%; position: relative; }
+.slides img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out; margin: 0; }
 
 /* ==========================================================================
-   Services Page Layout (Replaces Table)
+   Services Page Layout
    ========================================================================== */
-.service-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin: 30px 20px;
-}
-
-.service-img {
-  flex-shrink: 0;
-  width: 200px;
-  text-align: center;
-}
-
-.service-img img {
-  margin: 0;
-}
-
-.service-content {
-  flex: 1;
-}
-
-.service-content p {
-  padding: 0;
-}
-
-.service-content ul {
-  padding-left: 20px;
-}
-
-.service-content li {
-  margin-bottom: 8px;
-}
+.service-item { display: flex; align-items: center; justify-content: center; gap: 30px; margin: 30px 20px; }
+.service-img { flex-shrink: 0; width: 200px; text-align: center; }
+.service-img img { margin: 0; }
+.service-content { flex: 1; }
+.service-content p { padding: 0; }
+.service-content ul { padding-left: 20px; }
+.service-content li { margin-bottom: 8px; }
 
 /* ==========================================================================
-   Fees Layout (Replaces &nbsp; hacks)
+   Fees Layout
    ========================================================================== */
 .fee-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  row-gap: 10px;
-  column-gap: 40px;
-  max-width: 400px;
-  margin: 20px 20px;
-  font-family: var(--font-body);
-  font-size: 14px;
+  display: grid; grid-template-columns: 1fr auto;
+  row-gap: 10px; column-gap: 40px; max-width: 400px;
+  margin: 20px 20px; font-family: var(--font-body); font-size: 14px;
 }
-
-.fee-label {
-  font-weight: 600;
-}
+.fee-label { font-weight: 600; }
 
 /* ==========================================================================
    FAQ Layout
    ========================================================================== */
-.faq-q {
-  font-weight: 600;
-  color: var(--color-red);
-  margin-top: 25px;
-}
-
-.faq-a {
-  color: #000;
-}
+.faq-q { font-weight: 600; color: var(--color-red); margin-top: 25px; padding: 0 20px; }
+.faq-a { color: #000; margin-top: 15px; padding: 0 20px; }
 
 /* ==========================================================================
-   Gallery Page Layout (Replaces Table Grid)
+   Gallery Page Layout 
    ========================================================================== */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   margin: 30px auto;
   padding: 0 20px;
-  align-items: center;
+}
+
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 25px; 
 }
 
 .gallery-item {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-item img { margin: 0; }
+
+.gallery-item figcaption {
+  font-family: var(--font-body); font-size: 16px; font-weight: 500;
+  color: var(--color-primary-text);
+  margin-top: 8px; 
   text-align: center;
 }
 
-.gallery-item img {
-  margin: 0;
-  display: block;
-  margin: 0 auto;
-}
-
-.gallery-item figcaption {
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--color-primary-text);
-  margin-top: 10px;
-}
-
-.testimonial {
-  color: #000;
-  font-size: 16px;
-  font-weight: 400;
-  text-indent: 0;
-}
-
-.testimonial-author {
-  color: #000;
-  font-size: 16px;
-  font-style: italic;
-  margin-bottom: 25px;
-}
+.testimonial { color: #000; font-size: 16px; font-weight: 400; text-indent: 0; }
+.testimonial-author { color: #000; font-size: 16px; font-style: italic; margin-bottom: 25px; }
 
 .social-footer-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+  display: flex; justify-content: center; align-items: center;
+  gap: 15px; margin-top: 20px;
 }
-
-.social-footer-links img {
-  margin: 0;
-}
+.social-footer-links img { margin: 0; }
 
 /* ==========================================================================
    Footer
    ========================================================================== */
-footer {
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-footer p {
-  font-size: 14px;
-}
+footer { margin-top: 30px; padding-bottom: 30px; }
+footer p { font-size: 14px; }
 
 /* ==========================================================================
-   Vanilla JS Lightbox (Untouched from your version)
+   Vanilla JS Lightbox 
    ========================================================================== */
 .lightbox-overlay {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
