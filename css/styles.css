@@ -1,247 +1,229 @@
-/* General styles */
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+:root {
+  --color-primary-text: #585858;
+  --color-heading: #585858;
+  --color-blue: rgb(53, 114, 153);
+  --color-blue-light: rgb(12, 102, 220);
+  --color-red: red;
+  --color-nav-bg: #ffffff;
+  --color-nav-hover: rgb(65, 125, 205);
+  
+  --font-body: 'Open Sans', sans-serif;
+  --font-heading: Helvetica, Arial, sans-serif;
+  --font-logo: 'Caudex', serif;
+  --font-fallback: Verdana, Arial, Helvetica, sans-serif;
+  
+  --site-width: 980px;
+}
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-  background: url(/images/RecycledPaper1.jpg) 0 0;
-  margin: 0 auto;
+  font-family: var(--font-fallback);
+  font-size: 100%;
+  line-height: 1.4;
+  background: url('/images/RecycledPaper1.jpg') 0 0 repeat;
+  margin: 0;
+  padding: 0;
+  color: var(--color-primary-text);
 }
-
-main, header {
-  width: 980px;
-  margin: 0 auto;
-}
-
-/* Links */
 
 a {
   color: #42413C;
   text-decoration: none;
 }
 
-a li {
-  color: inherit;
+a:hover, a:active, a:focus {
   text-decoration: none;
 }
 
-a:hover,
-a:active,
-a:focus {
-  text-decoration: none;
-}
-
-/* Images */
-
-a img {
+img {
+  max-width: 100%;
+  height: auto;
   border: none;
-  margin: 0 20px;
 }
 
-/* Headings */
-
+/* ==========================================================================
+   Typography & Utility Classes
+   ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
   font-weight: 300;
-  color: #585858;
+  color: var(--color-heading);
   margin-top: 15px;
-  padding: 0 20px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
 h1 {
-  font-family: 'Caudex', serif;
+  font-family: var(--font-logo);
   font-size: 51px;
+  margin: 0;
   padding-left: 50px;
 }
 
-h2 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 24px;
-}
+h2 { font-size: 24px; }
+h3 { font-size: 22px; margin-top: -40px; }
+h4 { font-family: var(--font-body); font-size: 16px; font-weight: 400; }
 
-h3 {
-  font-size: 22px;
-  margin-top: -40px;
-}
-
-h4 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-h5 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 19px;
-  font-weight: 400;
-  padding-left: 0;
-  text-align: left;
-}
-
-h6 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 150;
-  text-align: left;
-}
-
-/* Text elements */
-
-p, ul, p1 {
-  font-family: 'Open Sans', sans-serif;
+p, ul, ol, blockquote {
+  font-family: var(--font-body);
   font-weight: 300;
-  color: #585858;
+  font-size: 14px;
+  color: var(--color-primary-text);
   margin-top: 15px;
   padding: 0 20px;
 }
 
-p, p1 {
-  font-size: 14px;
-}
+ul { font-size: 15px; }
 
-ul {
-  font-size: 15px;
-}
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-blue { color: var(--color-blue); }
+.text-blue-light { color: var(--color-blue-light); }
+.text-red { color: var(--color-red); }
+.text-black { color: #000; }
+.font-bold { font-weight: 600; }
+.font-medium { font-weight: 400; }
+.font-light { font-weight: 300; }
+.text-lg { font-size: 16px; }
+.text-xl { font-size: 18px; }
+.text-2xl { font-size: 20px; }
+.text-3xl { font-size: 24px; }
+.text-4xl { font-size: 30px; }
+.reg-mark { font-size: 0.4em; vertical-align: super; }
 
-p1 {
-  font-size: 17px;
-  padding-left: 0;
-}
-
-/* Special styles */
-
-pic {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: #585858;
-  margin-top: 15px;
-  padding: 0 20px;
-}
-
-.bold {
-  font-weight: 600;
-}
-
-/* Navigation */
-
-nav {
-  position: relative;
-  top: 0;
-  height: 30px;
-  background: transparent;
+/* ==========================================================================
+   Layout Containers
+   ========================================================================== */
+.container {
+  width: var(--site-width);
   margin: 0 auto;
 }
 
-#TopMenu li a {
-  text-decoration: none;
-  display: inline-block;
-}
-
-ul#TopMenu {
-  background-color: #ffffff;
-}
-
-ul#TopMenu li {
-  float: left;
-  display: block;
-  padding: 0px 10px;
-  list-style: none;
-  width: 110px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  color: #42413C;
-  background-color: #ffffff;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 15;
-  padding: 10px 20px;
-}
-
-/*ul#TopMenu li a {text-decoration:none; display:inline-block;}*/
-ul#TopMenu li:hover {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: rgb(65, 125, 205);
-  display: inline-block;
-}
-
-ul#TopMenu .selected {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: rgb(65, 125, 205) !important;
-  display: inline-block;
-}
-
-/* Boxes */
-
-.boxfloating, #commentbox, #boxmain, #faqboxmain, #feeboxmain {
-  position: relative;
-  background: url(/images/gradientbox.png) 0 0 repeat-x;
-  background-color: #fff;
-  margin: 0 auto;
+/* Shared Box Style (Replaces old #boxmain, #feeboxmain, etc.) */
+.content-box {
+  background: #fff url('/images/gradientbox.png') 0 0 repeat-x;
   border: 1px solid #000;
   border-radius: 6px;
   box-shadow: 0 5px 5px 5px #aaa;
-}
-
-.boxfloating {
-  margin: 20px;
-}
-
-#photobox, #newsbox, #topbox, #logobox, #testbox {
+  margin: 20px auto;
+  padding: 20px 0;
   position: relative;
-  top: 0;
-  background: transparent;
-  margin: 0 auto;
 }
 
-#photobox {
-  width: 200px;
+.box-md { max-width: 680px; }
+.box-sm { max-width: 580px; }
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.main-nav {
+  background-color: var(--color-nav-bg);
+  height: auto;
 }
 
-#newsbox {
-  width: 100px;
-  margin-left: 100px;
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
-#topbox {
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  display: block;
+  width: 110px;
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: #42413C;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-list a:hover,
+.nav-list a.selected {
+  background-color: var(--color-nav-hover);
+  color: #ffffff;
+}
+
+.header-hero {
   width: 900px;
   margin: 20px auto;
+  text-align: center;
 }
 
-#logobox {
+.logo-container {
+  display: inline-block;
+  text-align: center;
+  position: relative;
   width: 510px;
 }
 
-#commentbox {
-  margin-top: 10px;
+.logo-img {
+  float: right;
+  width: 62px;
+  margin: 0;
 }
 
-#faqboxmain {
-  width: 680px;
+/* ==========================================================================
+   Homepage Specific Layout
+   ========================================================================== */
+.home-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-#feeboxmain {
-  width: 580px;
+.home-col {
+  flex: 1;
 }
 
-/* Gallery */
+/* Specific floating box padding adjustment */
+.home-col .content-box {
+  padding: 15px;
+  margin-top: 0;
+}
 
-#boxgallery {
-  position: relative;
+.social-icons-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Slideshow Container */
+.slideshow-container {
   width: 355px;
   height: 266px;
-  margin: 0 auto 28px;
   border: 2px solid #fff;
+  position: relative;
+  flex-shrink: 0;
 }
 
-#slides {
-  position: relative;
+.slides {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
-#slides img {
+.slides img {
   position: absolute;
   top: 0;
   left: 0;
@@ -250,168 +232,163 @@ ul#TopMenu .selected {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
+  margin: 0;
 }
 
-/* Services section */
-
-#servleft, #servleft1, #servright, #servright1, #servbottom {
-  position: relative;
-  background: transparent;
-}
-
-#servleft {
-  top: 55px;
-  width: 180px;
-}
-
-#servleft1 {
-  top: 20px;
-  width: 245px;
-}
-
-#servright {
-  top: -795px;
-  left: 190px;
-  width: 700px;
-}
-
-#servright1 {
-  top: -830px;
-  left: 265px;
-  width: 700px;
-}
-
-#servbottom {
-  top: -740px;
-  width: 980px;
-  margin-bottom: -600px;
-}
-
-/* Contact form */
-
-#contactform {
-  background: transparent;
-  margin: auto;
-  left: 160px;
-  position: relative;
-  width: 700px;
-  height: 300px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 25px;
-  font-weight: 200;
-  color: #357299;
-  text-decoration: none;
-}
-
-#submit {
-  color: #900;
-  width: 50px;
-  height: 30px;
-  font-weight: bold;
-}
-
-/* Service list */
-
-ul#servright {
-  background: transparent;
-  padding-right: 20px;
-  text-indent: 20px;
-}
-
-#servright li {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 6px 0;
-}
-
-/* ================================================== 
-   VANILLA JAVASCRIPT LIGHTBOX 
-   ================================================== */
-
-.lightbox-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 9999;
-  display: none; /* hidden initially */
+/* ==========================================================================
+   Services Page Layout (Replaces Table)
+   ========================================================================== */
+.service-item {
+  display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(3px); /* Modern frosted glass effect */
+  gap: 30px;
+  margin: 30px 20px;
 }
 
-.lightbox-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.lightbox-img {
-  max-width: 100%;
-  max-height: 75vh;
-  border: 4px solid #fff;
-  border-radius: 4px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  object-fit: contain;
-}
-
-.lightbox-caption {
-  color: #fff;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  margin-top: 15px;
+.service-img {
+  flex-shrink: 0;
+  width: 200px;
   text-align: center;
-  max-width: 800px;
 }
 
-/* Buttons */
-.lightbox-close,
-.lightbox-prev,
-.lightbox-next {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 50px;
-  cursor: pointer;
-  position: absolute;
-  transition: color 0.3s;
-  padding: 10px;
-  z-index: 10000;
-  outline: none;
+.service-img img {
+  margin: 0;
 }
 
-.lightbox-close:hover,
-.lightbox-prev:hover,
-.lightbox-next:hover {
-  color: #aaa;
+.service-content {
+  flex: 1;
 }
 
-.lightbox-close {
-  top: -45px;
-  right: -50px;
-  line-height: 1;
+.service-content p {
+  padding: 0;
 }
 
-.lightbox-prev {
-  top: 50%;
-  left: -70px;
-  transform: translateY(-50%);
+.service-content ul {
+  padding-left: 20px;
 }
 
-.lightbox-next {
-  top: 50%;
-  right: -70px;
-  transform: translateY(-50%);
+.service-content li {
+  margin-bottom: 8px;
 }
 
-/* Mobile responsiveness */
+/* ==========================================================================
+   Fees Layout (Replaces &nbsp; hacks)
+   ========================================================================== */
+.fee-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 10px;
+  column-gap: 40px;
+  max-width: 400px;
+  margin: 20px 20px;
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.fee-label {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   FAQ Layout
+   ========================================================================== */
+.faq-q {
+  font-weight: 600;
+  color: var(--color-red);
+  margin-top: 25px;
+}
+
+.faq-a {
+  color: #000;
+}
+
+/* ==========================================================================
+   Gallery Page Layout (Replaces Table Grid)
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 30px auto;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.gallery-item {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery-item img {
+  margin: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery-item figcaption {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-primary-text);
+  margin-top: 10px;
+}
+
+.testimonial {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  text-indent: 0;
+}
+
+.testimonial-author {
+  color: #000;
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.social-footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-footer-links img {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Vanilla JS Lightbox (Untouched from your version)
+   ========================================================================== */
+.lightbox-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85); z-index: 9999; display: none;
+  align-items: center; justify-content: center; backdrop-filter: blur(3px);
+}
+.lightbox-container { position: relative; display: flex; flex-direction: column; align-items: center; max-width: 90%; max-height: 90%; }
+.lightbox-img { max-width: 100%; max-height: 75vh; border: 4px solid #fff; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); object-fit: contain; }
+.lightbox-caption { color: #fff; font-family: var(--font-body); font-size: 16px; margin-top: 15px; text-align: center; max-width: 800px; }
+.lightbox-close, .lightbox-prev, .lightbox-next { background: none; border: none; color: #fff; font-size: 50px; cursor: pointer; position: absolute; transition: color 0.3s; padding: 10px; z-index: 10000; outline: none; }
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover { color: #aaa; }
+.lightbox-close { top: -45px; right: -50px; line-height: 1; }
+.lightbox-prev { top: 50%; left: -70px; transform: translateY(-50%); }
+.lightbox-next { top: 50%; right: -70px; transform: translateY(-50%); }
+
 @media (max-width: 768px) {
   .lightbox-prev { left: 0px; font-size: 35px; text-shadow: 1px 1px 3px #000; }
   .lightbox-next { right: 0px; font-size: 35px; text-shadow: 1px 1px 3px #000; }
