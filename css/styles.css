@@ -27,7 +27,7 @@ body {
   font-family: var(--font-fallback);
   font-size: 100%;
   line-height: 1.4;
-  background: url('/images/RecycledPaper1.jpg') 0 0 repeat;
+  background: url('/images/ui/recycled-paper-bg.jpg') 0 0 repeat;
   margin: 0;
   padding: 0;
   color: var(--color-primary-text);
@@ -86,7 +86,7 @@ ul { font-size: 15px; }
 .container { width: var(--site-width); margin: 0 auto; }
 
 .content-box {
-  background: #fff url('/images/gradientbox.png') 0 0 repeat-x;
+  background: #fff url('/images/ui/gradient-box.png') 0 0 repeat-x;
   border: 1px solid #000;
   border-radius: 6px;
   box-shadow: 0 5px 5px 5px #aaa;
