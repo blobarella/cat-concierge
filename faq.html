@@ -91,7 +91,11 @@
   </main>
 
   <footer class="container">
-    <p class="text-center">© Copyright 2025 Cat Concierge<span class="reg-mark">®</span></p>
+    <p class="text-center">© Copyright <span id="copyright-year"></span> Cat Concierge<span class="reg-mark">®</span></p>
+    <script>
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
+    <p class="text-center"><a href="/terms-and-conditions.pdf" title="Cat Concierge Terms and Conditions of service">Cat Concierge Terms and Conditions</a></p>
   </footer>
 </body>
 </html>

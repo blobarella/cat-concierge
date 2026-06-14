@@ -187,6 +187,38 @@ ul { font-size: 15px; }
   gap: 15px;
 }
 
+/* New CSS Rules for Sidebar Social Container */
+.social-sidebar-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.social-sidebar-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.social-sidebar-icons a {
+  color: var(--color-blue-light);
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.social-sidebar-icons a:hover {
+  color: var(--color-nav-hover);
+}
+
+/* Ensure sidebar icons are scaled to fit the sidebar constraints */
+.sidebar-svg {
+  width: 28px !important;
+  height: 28px !important;
+}
+
 /* Slideshow Container */
 .slideshow-container { width: 355px; height: 266px; border: 2px solid #fff; position: relative; margin: 0 auto; }
 .slides { width: 100%; height: 100%; position: relative; }
@@ -258,9 +290,30 @@ ul { font-size: 15px; }
 
 .social-footer-links {
   display: flex; justify-content: center; align-items: center;
-  gap: 15px; margin-top: 20px;
+  gap: 10px; margin-top: 20px;
 }
 .social-footer-links img { margin: 0; }
+
+/* Set default color for social links to match the blue-light text */
+.social-footer-links a {
+  color: var(--color-blue-light);
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+/* Hover style to transition the SVG color to the navigation hover shade */
+.social-footer-links a:hover {
+  color: var(--color-nav-hover);
+}
+
+/* Force SVGs to scale nicely and inherit the parent link color */
+.social-icon-svg {
+  width: 42px;
+  height: 42px;
+  fill: currentColor;
+  display: block;
+}
 
 /* ==========================================================================
    Footer

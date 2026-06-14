@@ -162,15 +162,37 @@
 
       <div class="social-footer-links text-4xl text-blue-light" style="margin-top: 40px;">
         <span>Like us? Connect with us on</span>
-        <a href="https://www.facebook.com/Cat.Concierge.CatSittingSydney" title="Cat Concierge on Facebook"><img src="/images/ui/facebook-heart.png" alt="Cat Concierge Facebook" width="42" /></a>
-        <a href="https://www.linkedin.com/company/cat-concierge" title="Cat Concierge on LinkedIn"><img src="/images/ui/linkedin-heart.png" alt="Cat Concierge Linkedin" width="42" /></a>
-        <a href="https://twitter.com/CatConciergeSyd" title="Cat Concierge on Twitter"><img src="/images/ui/twitter-bird-cute.png" alt="Cat Concierge Twitter" width="50" /></a>
+        
+        <!-- Facebook Inline SVG -->
+        <a href="https://facebook.com/Cat.Concierge.CatSittingSydney" title="Follow Cat Concierge on Facebook">
+          <svg class="social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="42" height="42" aria-hidden="true">
+            <path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
+          </svg>
+        </a>
+
+        <!-- LinkedIn Inline SVG -->
+        <a href="https://linkedin.com/company/cat-concierge" title="Follow Cat Concierge on LinkedIn">
+          <svg class="social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="42" height="42" aria-hidden="true">
+            <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z" />
+          </svg>
+        </a>
+
+        <!-- X Inline SVG -->
+        <a href="https://x.com/CatConciergeSyd" title="Follow Cat Concierge on X">
+          <svg class="social-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="42" height="42" aria-hidden="true">
+            <path transform="translate(2.182 2.182) scale(0.818)" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M5 1a4 4 0 0 0-4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4zm-.334 3.5a.75.75 0 0 0-.338 1.154l5.614 7.45l-5.915 6.345l-.044.051H6.03l4.83-5.179l3.712 4.928a.75.75 0 0 0 .337.251h4.422a.75.75 0 0 0 .336-1.154l-5.614-7.45L20.017 4.5h-2.05l-4.83 5.18l-3.714-4.928a.75.75 0 0 0-.337-.252zm10.88 13.548L6.431 5.952H8.45l9.114 12.095z" />
+          </svg>
+        </a>
       </div>
     </section>
   </main>
 
   <footer class="container">
-    <p class="text-center">© Copyright 2025 Cat Concierge<span class="reg-mark">®</span></p>
+    <p class="text-center">© Copyright <span id="copyright-year"></span> Cat Concierge<span class="reg-mark">®</span></p>
+    <script>
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
+    <p class="text-center"><a href="/terms-and-conditions.pdf" title="Cat Concierge Terms and Conditions of service">Cat Concierge Terms and Conditions</a></p>
   </footer>
 
   <script src="/js/lightbox.js"></script>
